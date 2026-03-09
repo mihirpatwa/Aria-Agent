@@ -4,7 +4,7 @@ Your goal is to perform automated browser testing using Chrome MCP, utilizing en
 
 ### 0. Check if QA is Enabled
 
-Read `menthra-aria-agents/.env` and check `QA_ENABLE_CHROME_MCP`. If "false", skip this phase.
+Read `Aria-Agent/.env` and check `QA_ENABLE_CHROME_MCP`. If "false", skip this phase.
 
 ### 1. Environment Credentials
 
@@ -36,7 +36,7 @@ Execute the following using Chrome MCP tools:
 
 ### 3. Reporting
 
-Save results to `menthra-aria-agents/output/qa-report.md`.
+Save results to `Aria-Agent/output/qa-report.md`.
 
 ```markdown
 # QA Automation Report

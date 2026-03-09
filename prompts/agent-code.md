@@ -4,7 +4,8 @@ Your goal is to find the technical root cause of a ticket. You operate AUTOMATIC
 
 ### 1. Read Ticket Information
 
-Read `menthra-aria-agents/output/azure-report.md` or get ticket details from the request context to understand:
+Read `Aria-Agent/output/azure-report.md` or get ticket details from the request context to understand:
+
 - Ticket ID
 - Title and description
 - Assigned service area
@@ -12,6 +13,7 @@ Read `menthra-aria-agents/output/azure-report.md` or get ticket details from the
 ### 2. Identify Service (with Automatic Retry)
 
 **Attempt 1 (wait 2s if fails, then try Attempt 2):**
+
 - Analyze ticket title and description
 - Map to a Menthra service:
   - HeyGen (Avatar/Lip-sync)
@@ -23,27 +25,32 @@ Read `menthra-aria-agents/output/azure-report.md` or get ticket details from the
 - **If can't identify**: Wait 2s, try broader search
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
+
 - Look for keywords in ticket description
 - Consider multiple services
 - **If still unclear**: Wait 4s, use general approach
 
 **Attempt 3:**
+
 - Assume general issue, search broadly
 - Continue anyway
 
 ### 3. Locate Files (with Automatic Retry)
 
 **Attempt 1 (wait 2s if fails, then try Attempt 2):**
+
 - Use `Glob` tool with pattern: `src/**/*<service>*`
 - Example: `src/**/*heygen*` or `src/**/*avatar*`
 - **If no files found**: Wait 2s, try broader pattern
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
+
 - Use broader pattern: `src/**/*`
 - Search for related terms
 - **If no files found**: Wait 4s, try `Grep` for keywords
 
 **Attempt 3:**
+
 - Use `Grep` to search for service keywords in all files
 - Use pattern: `<service>` (case-insensitive)
 - Continue with whatever files found
@@ -51,6 +58,7 @@ Read `menthra-aria-agents/output/azure-report.md` or get ticket details from the
 ### 4. Diagnose (with Automatic Retry)
 
 **Attempt 1 (wait 2s if fails, then try Attempt 2):**
+
 - Use `Read` tool to examine identified files
 - Look for:
   - Missing error handlers
@@ -61,18 +69,20 @@ Read `menthra-aria-agents/output/azure-report.md` or get ticket details from the
 - **If diagnosis unclear**: Wait 2s, re-examine with different focus
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
+
 - Use `Grep` to search for specific error patterns
 - Search for related test files
 - **If still unclear**: Wait 4s, make best assessment
 
 **Attempt 3:**
+
 - Provide best analysis with available information
 - Note any uncertainties
 - Continue anyway
 
 ### 5. Generate Detailed Report
 
-Save to `menthra-aria-agents/output/code-report.md`:
+Save to `Aria-Agent/output/code-report.md`:
 
 ```markdown
 # Code Analysis Report
@@ -94,10 +104,12 @@ Save to `menthra-aria-agents/output/code-report.md`:
 ## Files Analyzed
 
 ### File 1: [path]
+
 **Purpose**: [what this file does]
 **Status**: ✅ Reviewed / ⚠️ Partial / ❌ Error
 
 ### File 2: [path]
+
 **Purpose**: [what this file does]
 **Status**: ✅ Reviewed / ⚠️ Partial / ❌ Error
 
@@ -106,11 +118,13 @@ Save to `menthra-aria-agents/output/code-report.md`:
 **Primary Issue**: [description]
 
 **Technical Details**:
+
 - [Detail 1]
 - [Detail 2]
 - [Detail 3]
 
 **Evidence**:
+
 - [Code snippet showing the issue]
 - [Error messages if any]
 - [Related code context]
@@ -136,6 +150,7 @@ Save to `menthra-aria-agents/output/code-report.md`:
 ### 6. Continue Autonomous Workflow
 
 After code analysis (regardless of success/failure):
+
 - Save the report
 - Continue to Fix Generation stage
 - DO NOT ask for approval

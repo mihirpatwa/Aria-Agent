@@ -26,13 +26,13 @@ Map to internal service tags if possible:
 
 ### 3. Present & Select
 
-1. Generate a table of active tickets in `menthra-aria-agents/output/azure-report.md`.
+1. Generate a table of active tickets in `Aria-Agent/output/azure-report.md`.
 2. Present this table to the user.
 3. **WAIT** for the user to respond with "Work on ticket #[ID]" or similar selection.
 
 ### 4. Output
 
-Write findings to `menthra-aria-agents/output/azure-report.md`:
+Write findings to `Aria-Agent/output/azure-report.md`:
 
 ```markdown
 # 🎫 Azure Ticket Report

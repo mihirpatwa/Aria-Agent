@@ -4,7 +4,7 @@ Your goal is to update the persistent memory with both ticket history and testin
 
 ### 1. Update Pattern Frequencies
 
-- Read `menthra-aria-agents/memory/patterns.json`.
+- Read `Aria-Agent/memory/patterns.json`.
 - Identify if the bug/feature follows a recurring project pattern.
 - Store **Testing Scenarios** that were successful or failed.
 - Store **Outcomes** and anti-patterns identified during Development/QA.
@@ -15,12 +15,12 @@ By recording specific edge cases encountered in the current Menthra codebase, yo
 
 ### 3. Update Checklist & History
 
-- Append the current run to `menthra-aria-agents/memory/ticket-history.json`.
-- Mark steps as completed in `menthra-aria-agents/memory/agent-checklist.json`.
+- Append the current run to `Aria-Agent/memory/ticket-history.json`.
+- Mark steps as completed in `Aria-Agent/memory/agent-checklist.json`.
 
 ### 4. Memory Report
 
-Save to `menthra-aria-agents/output/memory-report.md`:
+Save to `Aria-Agent/output/memory-report.md`:
 
 ```markdown
 # Memory Update Report

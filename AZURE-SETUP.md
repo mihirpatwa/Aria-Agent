@@ -34,10 +34,10 @@ ORDER BY [Microsoft.VSTS.Common.Priority] ASC
 
 ### 2. Configure Environment Variables
 
-Create `.env` file in `menthra-aria-agents/`:
+Create `.env` file in `Aria-Agent/`:
 
 ```bash
-cd menthra-aria-agents
+cd Aria-Agent
 cp .env.example .env
 ```
 
@@ -62,7 +62,7 @@ AZURE_PAT="your-pat-token-here"
 From your terminal (not from Claude Code):
 
 ```bash
-cd menthra-aria-agents
+cd Aria-Agent
 ./run.sh "Show me all open tickets"
 ```
 
@@ -73,31 +73,34 @@ Primary board URL:
 ## What Gets Fetched
 
 Aria will fetch tickets that match:
+
 - ✅ Assigned to: **Mihir Patwa**
 - ✅ Status: **To Do** OR **In Progress** OR **Reopen**
 - ✅ Project: Your configured project
 
 ## Ticket States Tracked
 
-| State | Fetched? | Description |
-|-------|----------|-------------|
-| To Do | ✅ Yes | New tickets not started |
-| In Progress | ✅ Yes | Active tickets being worked on |
-| Reopen | ✅ Yes | Tickets that were reopened |
-| New | ❌ No | Not included in query |
-| Closed | ❌ No | Completed tickets |
-| Removed | ❌ No | Cancelled tickets |
-| Resolved | ❌ No | Fixed but not closed |
+| State       | Fetched? | Description                    |
+| ----------- | -------- | ------------------------------ |
+| To Do       | ✅ Yes   | New tickets not started        |
+| In Progress | ✅ Yes   | Active tickets being worked on |
+| Reopen      | ✅ Yes   | Tickets that were reopened     |
+| New         | ❌ No    | Not included in query          |
+| Closed      | ❌ No    | Completed tickets              |
+| Removed     | ❌ No    | Cancelled tickets              |
+| Resolved    | ❌ No    | Fixed but not closed           |
 
 ## Troubleshooting
 
 ### No tickets returned?
+
 1. **Check assignee name** - Make sure tickets are assigned to "Mihir Patwa" (exact match)
 2. **Check ticket states** - Ensure tickets are in "To Do", "In Progress", or "Reopen" status
 3. **Check project** - Verify AZURE_PROJECT matches your actual project name
 4. **Check permissions** - Ensure PAT token has Work Items Read permission
 
 ### Authentication error?
+
 ```bash
 # Test your credentials manually
 curl -u :$AZURE_PAT \
@@ -105,6 +108,7 @@ curl -u :$AZURE_PAT \
 ```
 
 ### Wrong organization?
+
 ```bash
 # List your organizations
 curl -u :$AZURE_PAT \
@@ -113,12 +117,12 @@ curl -u :$AZURE_PAT \
 
 ## Azure DevOps API Endpoints Used
 
-| Purpose | Method | Endpoint |
-|---------|--------|----------|
-| Fetch tickets | POST | `/_apis/wit/wiql` |
-| Get ticket details | GET | `/_apis/wit/workitems` |
-| Post comment | POST | `/_apis/wit/workitems/{id}/comments` |
-| Update state | PATCH | `/_apis/wit/workitems/{id}` |
+| Purpose            | Method | Endpoint                             |
+| ------------------ | ------ | ------------------------------------ |
+| Fetch tickets      | POST   | `/_apis/wit/wiql`                    |
+| Get ticket details | GET    | `/_apis/wit/workitems`               |
+| Post comment       | POST   | `/_apis/wit/workitems/{id}/comments` |
+| Update state       | PATCH  | `/_apis/wit/workitems/{id}`          |
 
 ## Security Notes
 

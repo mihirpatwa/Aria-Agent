@@ -33,7 +33,7 @@ To enable automated browser testing:
 
 1. Install Chrome MCP server
 2. Configure MCP connection in your Claude Code environment
-3. Set `QA_ENABLE_CHROME_MCP=true` in `menthra-aria-agents/.env`
+3. Set `QA_ENABLE_CHROME_MCP=true` in `Aria-Agent/.env`
 
 #### Option B: Manual Testing Mode
 
@@ -56,7 +56,7 @@ QA_DEV_SERVER_URL="http://localhost:5173"
 ### Basic Usage
 
 ```bash
-cd menthra-aria-agents
+cd Aria-Agent
 
 # Test a specific fix
 ./run.sh "Test the language selector fix for ticket 114644"
@@ -85,30 +85,35 @@ QA_DEV_SERVER_URL="http://localhost:5173"
 ## Test Coverage
 
 ### UI Changes
+
 - ✅ Visual rendering on desktop browser
 - ✅ Visual rendering on mobile viewport
 - ✅ Consistent styling across breakpoints
 - ✅ No visual regressions
 
 ### Functionality Testing
+
 - ✅ Interactive elements work correctly
 - ✅ Form submissions and validations
 - ✅ Navigation and routing
 - ✅ State management
 
 ### Authentication Testing
+
 - ✅ Login functionality with test credentials
 - ✅ Session persistence
 - ✅ User permissions and access control
 - ✅ Logout functionality
 
 ### Audio/Video Testing
+
 - ✅ Microphone permission handling
 - ✅ Audio playback functionality
 - ✅ Video/avatar display
 - ✅ WebRTC and WebSocket connections
 
 ### Performance Testing
+
 - ✅ Page load times
 - ✅ Interaction response times
 - ✅ Memory usage
@@ -119,8 +124,9 @@ QA_DEV_SERVER_URL="http://localhost:5173"
 The QA agent generates comprehensive reports:
 
 ### Location
+
 ```
-menthra-aria-agents/output/qa-report.md
+Aria-Agent/output/qa-report.md
 ```
 
 ### Report Contents
@@ -202,6 +208,7 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 ```
 
 **Test Cases:**
+
 - Country flags visible on desktop Chrome
 - Country flags visible on mobile viewport
 - Dropdown opens and closes correctly
@@ -215,6 +222,7 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 ```
 
 **Test Cases:**
+
 - Login form validation
 - Authentication with test credentials
 - Session persistence after page refresh
@@ -227,6 +235,7 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 ```
 
 **Test Cases:**
+
 - Layout adapts to mobile viewport
 - Touch interactions work
 - Mobile-specific features function
@@ -241,6 +250,7 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 **Solution:** Agent automatically falls back to manual testing mode with detailed instructions
 
 **Manual Steps:**
+
 1. Start development server: `npm run dev`
 2. Open browser to `http://localhost:5173`
 3. Login with test credentials
@@ -251,6 +261,7 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 **Problem:** Cannot connect to development server
 
 **Solution:**
+
 ```bash
 # Start server
 npm run dev
@@ -267,6 +278,7 @@ lsof -i :5173
 **Problem:** Authentication fails with test credentials
 
 **Solution:**
+
 - Verify test account exists in your system
 - Update credentials in `.env` file
 - Check authentication service status
@@ -276,6 +288,7 @@ lsof -i :5173
 **Problem:** No screenshots in QA report
 
 **Solution:**
+
 - Check Chrome MCP screenshot permissions
 - Verify output directory is writable
 - Ensure browser window is not minimized
@@ -302,7 +315,7 @@ lsof -i :5173
 
 For issues or questions about the QA Automation Agent:
 
-1. Check `menthra-aria-agents/output/qa-report.md` for detailed test results
+1. Check `Aria-Agent/output/qa-report.md` for detailed test results
 2. Review Chrome MCP setup documentation
 3. Verify test credentials are correct
 4. Ensure development server is running

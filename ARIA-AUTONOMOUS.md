@@ -33,22 +33,22 @@ For all stages EXCEPT delivery:
 
 ## 📋 Phase 1: Environment & Context Initialization
 
-1. **Check Environment**: Read `menthra-aria-agents/.env` to get all configuration:
+1. **Check Environment**: Read `Aria-Agent/.env` to get all configuration:
    - `AZURE_ORG`, `AZURE_PROJECT`, `AZURE_PAT`, `AZURE_ASSIGNEE`
    - `ARIA_APPROVE_SENSITIVE_ACTIONS` - Check if auto-approval enabled
    - `QA_ENABLE_CHROME_MCP` - Check if QA automation enabled
    - `QA_DEV_SERVER_URL`, `QA_TEST_EMAIL`, `QA_TEST_PASSWORD`
 
 2. **Initialize Memory**: Read all memory files:
-   - `menthra-aria-agents/memory/patterns.json`
-   - `menthra-aria-agents/memory/ticket-history.json`
-   - `menthra-aria-agents/memory/agent-checklist.json`
+   - `Aria-Agent/memory/patterns.json`
+   - `Aria-Agent/memory/ticket-history.json`
+   - `Aria-Agent/memory/agent-checklist.json`
 
-3. **Setup Directories**: Ensure `menthra-aria-agents/output/` exists and is empty for this run.
+3. **Setup Directories**: Ensure `Aria-Agent/output/` exists and is empty for this run.
 
 ## 🎫 Phase 2: Triage & Selection (Azure DevOps)
 
-1. **Fetch Tickets**: Read `menthra-aria-agents/prompts/agent-azure.md` and execute the FETCH commands.
+1. **Fetch Tickets**: Read `Aria-Agent/prompts/agent-azure.md` and execute the FETCH commands.
    - Categorize as **Task / Bug / Feature**.
    - Present the list to the user.
 
@@ -58,17 +58,17 @@ For all stages EXCEPT delivery:
 
 ## 🔍 Phase 3: Autonomous Development
 
-1. **Analyze Instructions**: Read `menthra-aria-agents/prompts/agent-code.md`.
+1. **Analyze Instructions**: Read `Aria-Agent/prompts/agent-code.md`.
    - Identify the root cause or required implementation.
    - Analyze the current codebase structure.
 
-2. **Implement Fix**: Read `menthra-aria-agents/prompts/agent-fix.md`.
+2. **Implement Fix**: Read `Aria-Agent/prompts/agent-fix.md`.
    - Generate and apply necessary code changes.
    - Optimize changes for the existing project structure.
 
 ## 🌐 Phase 4: QA Automation (Chrome MCP)
 
-1. **Read QA Instructions**: Read `menthra-aria-agents/prompts/agent-qa.md`.
+1. **Read QA Instructions**: Read `Aria-Agent/prompts/agent-qa.md`.
    - Use **Chrome MCP** for automated functional testing.
    - Use credentials (`QA_TEST_EMAIL`, `QA_TEST_PASSWORD`) from `.env` for authentication.
    - Execute functional tests and edge-case scenarios.
@@ -76,13 +76,13 @@ For all stages EXCEPT delivery:
 
 ## 🧠 Phase 5: Learning & Memory
 
-1. **Update Memory**: Read `menthra-aria-agents/prompts/agent-memory.md`.
-   - Store **testing scenarios** and **outcomes** in `menthra-aria-agents/memory/patterns.json` and history files.
+1. **Update Memory**: Read `Aria-Agent/prompts/agent-memory.md`.
+   - Store **testing scenarios** and **outcomes** in `Aria-Agent/memory/patterns.json` and history files.
    - Update patterns to help the agent learn project-specific edge cases over time.
 
 ## 🚀 Phase 6: Review & Commit
 
-1. **Synthesis**: Generate `menthra-aria-agents/output/final-report.md`.
+1. **Synthesis**: Generate `Aria-Agent/output/final-report.md`.
    - Include a summary of all executed test scenarios.
    - Present the changes made to the codebase.
 
@@ -92,7 +92,7 @@ For all stages EXCEPT delivery:
 
 ## 📊 Phase 9: Final Synthesis
 
-Generate comprehensive final report at `menthra-aria-agents/output/final-report.md`:
+Generate comprehensive final report at `Aria-Agent/output/final-report.md`:
 
 ```markdown
 # ARIA Autonomous Run Report

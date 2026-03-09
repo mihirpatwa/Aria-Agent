@@ -7,7 +7,7 @@ All components of the ARIA Multi-Agent System have been successfully implemented
 ## 📁 Directory Structure
 
 ```
-menthra-aria-agents/
+Aria-Agent/
 ├── run.sh                      # ✅ Main orchestration script (executable)
 ├── README.md                   # ✅ Comprehensive documentation
 ├── QUICKSTART.md               # ✅ Quick start guide
@@ -30,12 +30,14 @@ menthra-aria-agents/
 ## 🎯 Implemented Features
 
 ### Phase 1: Directory Structure & Memory System ✅
-- ✅ Created `/menthra-aria-agents/` directory structure
+
+- ✅ Created `/Aria-Agent/` directory structure
 - ✅ Initialized `memory/patterns.json` with complete schema
 - ✅ Initialized `memory/ticket-history.json` with schema
 - ✅ Created `output/` directory with .gitkeep
 
 ### Phase 2: Agent Prompt Files ✅
+
 - ✅ Created `prompts/main-agent.md` - ARIA Commander orchestrator
 - ✅ Created `prompts/agent-azure.md` - Azure Ticket Agent with full API implementation
 - ✅ Created `prompts/agent-code.md` - Code Analyst with Menthra-specific file paths
@@ -43,6 +45,7 @@ menthra-aria-agents/
 - ✅ Created `prompts/agent-memory.md` - Pattern Memory with 8 categories
 
 ### Phase 3: Runner Script ✅
+
 - ✅ Created `run.sh` with complete orchestration logic
 - ✅ Implemented keyword-based agent dispatch
 - ✅ Sequential agent execution with output chaining
@@ -51,12 +54,14 @@ menthra-aria-agents/
 - ✅ Made executable (chmod +x)
 
 ### Phase 4: Environment Configuration ✅
+
 - ✅ Created `.env.example` with Azure credentials template
 - ✅ Updated `run.sh` to load .env file
 - ✅ Azure credential validation in script
 - ✅ Documented Azure PAT token generation in README
 
 ### Phase 5: Documentation & Testing ✅
+
 - ✅ Created comprehensive `README.md`
 - ✅ Created `QUICKSTART.md` for quick reference
 - ✅ Tested script execution (shows usage correctly)
@@ -65,26 +70,33 @@ menthra-aria-agents/
 ## 🔑 Key Implementation Details
 
 ### Agent Dispatch Logic
+
 The system intelligently routes requests to relevant agents:
+
 - **Azure Agent**: ticket|azure|open|status|assign|priority|mihir|board
 - **Code Agent**: bug|issue|error|analyz|fix|file|code|crash|fail|slow|lag|delay|drop|overflow
 - **Fix Agent**: fix|patch|solution|resolve|repair|how to|code
 - **Memory Agent**: Always runs
 
 ### Memory System
+
 - **patterns.json**: Tracks 8 pattern categories with occurrences and fixes
 - **ticket-history.json**: Maintains resolution history
 - Both files are auto-updated by the Memory Agent
 
 ### Menthra-Specific Knowledge
+
 All agents are tailored to the Menthra tech stack:
+
 - **HeyGen**: `useLiveAvatar.ts`, `HeyGenTwinCreation.tsx`
 - **ElevenLabs**: `useElevenLabsTts.ts`
 - **Deepgram**: `DeepgramContextProvider.tsx`, `useDeepgramConnection.ts`
 - **Common patterns**: FSM state machines, exponential backoff, keepalive timeouts
 
 ### Azure DevOps Integration
+
 Full API implementation with:
+
 - WIQL queries for ticket fetching
 - REST API for ticket details
 - Comment posting capability
@@ -95,7 +107,7 @@ Full API implementation with:
 
 ```bash
 # Navigate to the agents directory
-cd menthra-aria-agents
+cd Aria-Agent
 
 # Get all open tickets
 ./run.sh "Show me all open tickets assigned to Mihir"
@@ -123,12 +135,14 @@ After each run, the following reports are created in `output/`:
 ## 🧪 Testing Checklist
 
 ### Manual Testing ✅
+
 - ✅ Script shows usage when no arguments provided
 - ✅ All prompt files are present and readable
 - ✅ Memory JSON files are valid JSON
 - ✅ Script has executable permissions
 
 ### Integration Testing (Pending Azure Credentials)
+
 - ⏳ Test with actual Azure DevOps connection
 - ⏳ Verify ticket fetching and sorting
 - ⏳ Test code analysis with real Menthra files
@@ -136,6 +150,7 @@ After each run, the following reports are created in `output/`:
 - ⏳ Verify pattern memory updates
 
 ### Automated Validation (Pending)
+
 - ⏳ Verify all output files are created
 - ⏳ Validate JSON schemas
 - ⏳ Test error handling with invalid input
@@ -143,6 +158,7 @@ After each run, the following reports are created in `output/`:
 ## 🎨 Architecture Highlights
 
 ### Multi-Agent Orchestration
+
 ```
 User Request
     ↓
@@ -164,6 +180,7 @@ final-report.md (Unified Report)
 ```
 
 ### Claude CLI Integration
+
 - Uses `--print` flag for non-interactive execution
 - Uses `--system-prompt` to load agent personas
 - Output chaining via file redirection
@@ -179,6 +196,7 @@ final-report.md (Unified Report)
 ## 📈 Extensibility
 
 The system is designed for easy extension:
+
 1. Create new prompt file: `prompts/agent-newname.md`
 2. Add output file: `output/newname-report.md`
 3. Update `run.sh` with dispatch logic
@@ -187,12 +205,14 @@ The system is designed for easy extension:
 ## 🎯 Success Metrics
 
 ### Implementation Completeness: 100%
+
 - ✅ All 5 phases completed
 - ✅ All 10 required files created
 - ✅ Documentation complete
 - ✅ Script tested and functional
 
 ### Specification Compliance: 100%
+
 - ✅ Follows ARIA-MultiAgent-Setup.md specification
 - ✅ Uses exact agent prompts from spec
 - ✅ Implements all features described
@@ -201,6 +221,7 @@ The system is designed for easy extension:
 ## 📝 Next Steps
 
 ### For Production Use:
+
 1. **Configure Azure Credentials**: Set up Azure DevOps PAT token
 2. **Test with Real Data**: Run with actual Azure connection
 3. **Train Memory**: Analyze historical tickets to build patterns
@@ -208,6 +229,7 @@ The system is designed for easy extension:
 5. **Monitor Performance**: Track agent execution times and output quality
 
 ### For Development:
+
 1. **Add More Agents**: Create specialized agents for specific tasks
 2. **Enhance Memory**: Add more pattern categories
 3. **Improve Dispatch**: Fine-tune keyword matching
@@ -216,16 +238,16 @@ The system is designed for easy extension:
 
 ## 🏆 Achievement Summary
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Directory Structure | ✅ Complete | All directories created |
-| Memory System | ✅ Complete | JSON schemas initialized |
-| Agent Prompts | ✅ Complete | All 5 agents implemented |
-| Runner Script | ✅ Complete | Full orchestration logic |
-| Azure Integration | ✅ Complete | Full API implementation |
-| Documentation | ✅ Complete | README + QUICKSTART |
-| Testing | ✅ Basic | Script execution verified |
-| Production Ready | ⏳ Pending | Needs Azure credentials |
+| Component           | Status      | Notes                     |
+| ------------------- | ----------- | ------------------------- |
+| Directory Structure | ✅ Complete | All directories created   |
+| Memory System       | ✅ Complete | JSON schemas initialized  |
+| Agent Prompts       | ✅ Complete | All 5 agents implemented  |
+| Runner Script       | ✅ Complete | Full orchestration logic  |
+| Azure Integration   | ✅ Complete | Full API implementation   |
+| Documentation       | ✅ Complete | README + QUICKSTART       |
+| Testing             | ✅ Basic    | Script execution verified |
+| Production Ready    | ⏳ Pending  | Needs Azure credentials   |
 
 ---
 

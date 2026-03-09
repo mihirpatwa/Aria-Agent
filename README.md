@@ -52,7 +52,7 @@ No script required. Just wake Aria with a natural language request in your AI-en
 
 If you are using a standalone CLI that doesn't automatically read `.cursorrules` or `.windsurf` rules, you can activate Aria by manually pointing the agent to her master instructions in your first message:
 
-> "Read `menthra-aria-agents/ARIA-AUTONOMOUS.md` and initialize: Hey Aria, wake up"
+> "Read `Aria-Agent/ARIA-AUTONOMOUS.md` and initialize: Hey Aria, wake up"
 
 This ensures the agent adopts the Aria persona and follows the autonomous multi-stage pipeline.
 
@@ -67,7 +67,7 @@ This ensures the agent adopts the Aria persona and follows the autonomous multi-
 ## 📂 Directory Structure
 
 ```
-menthra-aria-agents/
+Aria-Agent/
 ├── ARIA-AUTONOMOUS.md      # Master Autonomous Instruction Set
 ├── prompts/                # Role-specific instructions
 │   ├── main-agent.md       # Core Persona (with autonomous behavior)
@@ -94,7 +94,7 @@ menthra-aria-agents/
 
 ## 🛠️ Configuration
 
-Configure `menthra-aria-agents/.env` with:
+Configure `Aria-Agent/.env` with:
 
 ### Azure DevOps Configuration:
 

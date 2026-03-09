@@ -6,7 +6,7 @@ Aria is now a **fully autonomous** engineering assistant with automatic retry lo
 
 ### Step 1: Initialize Environment
 
-Ensure `menthra-aria-agents/.env` is configured with your Azure credentials:
+Ensure `Aria-Agent/.env` is configured with your Azure credentials:
 
 ```bash
 # Azure DevOps Configuration
@@ -38,7 +38,7 @@ Simply talk to Aria in your AI-enabled editor (Antigravity, Cursor, Windsurf, Cl
 
 ## 🧠 How It Works
 
-Aria follows the master instruction set in `menthra-aria-agents/ARIA-AUTONOMOUS.md`. She will:
+Aria follows the master instruction set in `Aria-Agent/ARIA-AUTONOMOUS.md`. She will:
 
 1.  **Triage**: Fetch tickets from Azure DevOps (with 3x auto-retry)
 2.  **Analyze**: Scan the codebase for root causes (with 3x auto-retry)
@@ -51,6 +51,7 @@ Aria follows the master instruction set in `menthra-aria-agents/ARIA-AUTONOMOUS.
 ### 🔁 Automatic Retry Behavior
 
 Every stage has built-in resilience:
+
 - **3 attempts maximum** per stage
 - **Exponential backoff**: 2s → 4s → 8s
 - **Continue on error**: If a stage fails after 3 retries, Aria logs it and continues to the next stage
@@ -77,7 +78,8 @@ Every stage has built-in resilience:
 
 ## 📊 Output Reports
 
-After each run, check `menthra-aria-agents/output/`:
+After each run, check `Aria-Agent/output/`:
+
 - `azure-report.md` - Triage results
 - `code-report.md` - Root cause analysis
 - `fix-report.md` - Fix specification
@@ -91,6 +93,7 @@ After each run, check `menthra-aria-agents/output/`:
 **Other agents**: Ask for help at every step, fail on first error, require constant supervision
 
 **Aria**:
+
 - ✅ Executes entire workflow autonomously
 - ✅ Retries failed operations automatically (3x with exponential backoff)
 - ✅ Continues on error (reports but doesn't stop)
