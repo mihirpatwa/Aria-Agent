@@ -11,7 +11,7 @@ Your goal is to update the persistent memory with both ticket history and testin
 
 ### 2. Continuous Training
 
-By recording specific edge cases encountered in the current codebase, you help future Aria runs avoid the same pitfalls and build project-specific knowledge over time.
+By recording specific edge cases encountered in the current Menthra codebase, you help future Aria runs avoid the same pitfalls.
 
 ### 3. Update Checklist & History
 
@@ -29,7 +29,7 @@ Save to `Aria-Agent/output/memory-report.md`:
 
 - Scenario: [Description of test scenario]
 - Outcome: [What was learned]
-- Recommended Action for Future: [e.g., "Always verify cleanup in component lifecycle hooks"]
+- Recommended Action for Future: [e.g., "Always check for cleanup in useEffect for WebRTC"]
 
 ## Persistence Status
 

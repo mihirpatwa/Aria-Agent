@@ -32,16 +32,14 @@ Read `Aria-Agent/output/code-report.md` to understand:
 
 ### 3. Apply Fix Standards
 
-Ensure your fix follows best practices for the detected tech stack:
+Ensure your fix follows Menthra standards:
 
-- ✅ Follow framework-specific patterns (React hooks, Vue composition, etc.)
-- ✅ Use async/await for asynchronous operations (or appropriate patterns)
-- ✅ Apply proper error handling and logging
-- ✅ Ensure proper cleanup (useEffect for React, appropriate lifecycle for other frameworks)
-- ✅ Handle edge cases gracefully
-- ✅ Add proper type definitions (TypeScript, PropTypes, or equivalent)
-- ✅ Follow the project's existing code style and conventions
-- ✅ Include appropriate error messages and validation
+- ✅ Use functional React components and hooks
+- ✅ Use async/await for all asynchronous operations
+- ✅ Apply exponential backoff for reconnection logic
+- ✅ Ensure proper cleanup in `useEffect`
+- ✅ Handle errors gracefully
+- ✅ Add proper TypeScript types (if applicable)
 
 ### 4. Implement Fix (with Automatic Retry)
 
@@ -105,12 +103,11 @@ Save to `Aria-Agent/output/fix-report.md`:
 
 ## Standards Compliance
 
-- ✅ Framework-appropriate patterns
-- ✅ Async/await or equivalent async handling
+- ✅ React functional components
+- ✅ Async/await usage
 - ✅ Error handling
-- ✅ Proper cleanup
+- ✅ Cleanup in useEffect
 - ✅ Edge cases handled
-- ✅ Code style consistency
 
 ## Verdict
 

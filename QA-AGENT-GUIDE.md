@@ -7,7 +7,7 @@ The QA Automation Agent is a new addition to the Aria multi-agent system that au
 ## Features
 
 - 🤖 **Automated Browser Testing**: Uses Chrome MCP for real browser automation
-- 🔐 **Test Credential Management**: Configurable test account credentials via environment variables
+- 🔐 **Test Credential Management**: Built-in test account credentials (erik@mailinator.com / Robert@123)
 - 📱 **Responsive Testing**: Tests both desktop and mobile viewports
 - 📸 **Visual Evidence**: Captures screenshots and console logs
 - 🔄 **Fallback Mode**: Provides manual testing instructions when Chrome MCP is unavailable
@@ -17,12 +17,12 @@ The QA Automation Agent is a new addition to the Aria multi-agent system that au
 
 ### 1. Configure Test Credentials
 
-Configure test credentials in your `.env` file:
+The QA agent comes with default test credentials:
 
 ```bash
-# Edit .env file with your test account credentials
-QA_TEST_EMAIL="your-test-email@example.com"
-QA_TEST_PASSWORD="your-test-password"
+# Edit .env file (optional - defaults are already set)
+QA_TEST_EMAIL="erik@mailinator.com"
+QA_TEST_PASSWORD="Robert@123"
 ```
 
 ### 2. Chrome MCP Setup
@@ -74,12 +74,12 @@ cd Aria-Agent
 # Enable/disable Chrome MCP automation
 QA_ENABLE_CHROME_MCP="true"  # or "false" for manual mode only
 
-# Test credentials (configure with your test account)
-QA_TEST_EMAIL="your-test-email@example.com"
-QA_TEST_PASSWORD="your-test-password"
+# Test credentials
+QA_TEST_EMAIL="erik@mailinator.com"
+QA_TEST_PASSWORD="Robert@123"
 
 # Development server URL
-QA_DEV_SERVER_URL="http://localhost:3000"
+QA_DEV_SERVER_URL="http://localhost:5173"
 ```
 
 ## Test Coverage
@@ -201,30 +201,30 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 
 ## Test Scenarios
 
-### UI Component Testing
+### Language Selector Testing (Ticket #114644)
 
 ```bash
-./run.sh "Test the language selector fix"
+./run.sh "Test the language selector country flag fix"
 ```
 
 **Test Cases:**
 
-- Component renders correctly on desktop Chrome
-- Component renders correctly on mobile viewport
-- Dropdowns/interactions work as expected
-- Functionality works across different states
-- Icons and emojis render properly
+- Country flags visible on desktop Chrome
+- Country flags visible on mobile viewport
+- Dropdown opens and closes correctly
+- Language selection functionality works
+- Flag emojis render properly (🇺🇸, 🇪🇸, 🇮🇳)
 
 ### Authentication Testing
 
 ```bash
-./run.sh "Test user login flow with configured credentials"
+./run.sh "Test user login flow with credentials erik@mailinator.com"
 ```
 
 **Test Cases:**
 
 - Login form validation
-- Authentication with configured test credentials
+- Authentication with test credentials
 - Session persistence after page refresh
 - Logout functionality
 
@@ -251,9 +251,9 @@ User Request → Azure Agent → Code Analyst → Fix Generator → QA Agent →
 
 **Manual Steps:**
 
-1. Start development server: `npm run dev` (or your project's dev command)
-2. Open browser to your development server URL
-3. Login with configured test credentials
+1. Start development server: `npm run dev`
+2. Open browser to `http://localhost:5173`
+3. Login with test credentials
 4. Follow manual test cases in qa-report.md
 
 ### Development Server Not Running

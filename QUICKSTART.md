@@ -10,19 +10,19 @@ Ensure `Aria-Agent/.env` is configured with your Azure credentials:
 
 ```bash
 # Azure DevOps Configuration
-AZURE_ORG="your-azure-org"              # Your Azure DevOps organization
-AZURE_PROJECT="your-project-name"       # Your Azure DevOps project
-AZURE_PAT="your-pat-token"              # Your Personal Access Token
-AZURE_ASSIGNEE="your-name"              # Your display name in Azure DevOps
+AZURE_ORG="aauti"
+AZURE_PROJECT="HealthCare"
+AZURE_PAT="your-pat-token"
+AZURE_ASSIGNEE="Mihir Patwa"
 
 # Delivery Automation (optional - for full automation)
 ARIA_APPROVE_SENSITIVE_ACTIONS="false"  # Set to "true" or "commit,push,azure" for full autonomy
 
 # QA Automation (optional)
 QA_ENABLE_CHROME_MCP="true"
-QA_DEV_SERVER_URL="http://localhost:3000"
-QA_TEST_EMAIL="your-test-email@example.com"
-QA_TEST_PASSWORD="your-test-password"
+QA_DEV_SERVER_URL="http://localhost:8081"
+QA_TEST_EMAIL="erik@mailinator.com"
+QA_TEST_PASSWORD="Robert@123"
 ```
 
 ### Step 2: Wake Aria
@@ -31,8 +31,8 @@ Simply talk to Aria in your AI-enabled editor (Antigravity, Cursor, Windsurf, Cl
 
 **Examples:**
 
-- "Hey Aria, show me all open tickets assigned to me"
-- "Aria, analyze the login bug and provide a fix"
+- "Hey Aria, show me all open tickets assigned to Mihir"
+- "Aria, analyze the HeyGen lip-sync bug and provide a fix"
 - "Aria, triage my board for a morning update"
 - "Aria, run full autonomous workflow on ticket #123456"
 

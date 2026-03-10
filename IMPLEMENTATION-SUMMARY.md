@@ -40,7 +40,7 @@ Aria-Agent/
 
 - ✅ Created `prompts/main-agent.md` - ARIA Commander orchestrator
 - ✅ Created `prompts/agent-azure.md` - Azure Ticket Agent with full API implementation
-- ✅ Created `prompts/agent-code.md` - Code Analyst with intelligent file path detection
+- ✅ Created `prompts/agent-code.md` - Code Analyst with Menthra-specific file paths
 - ✅ Created `prompts/agent-fix.md` - Fix Generator with coding standards
 - ✅ Created `prompts/agent-memory.md` - Pattern Memory with 8 categories
 
@@ -73,7 +73,7 @@ Aria-Agent/
 
 The system intelligently routes requests to relevant agents:
 
-- **Azure Agent**: ticket|azure|open|status|assign|priority|board
+- **Azure Agent**: ticket|azure|open|status|assign|priority|mihir|board
 - **Code Agent**: bug|issue|error|analyz|fix|file|code|crash|fail|slow|lag|delay|drop|overflow
 - **Fix Agent**: fix|patch|solution|resolve|repair|how to|code
 - **Memory Agent**: Always runs
@@ -84,14 +84,14 @@ The system intelligently routes requests to relevant agents:
 - **ticket-history.json**: Maintains resolution history
 - Both files are auto-updated by the Memory Agent
 
-### Project-Specific Knowledge
+### Menthra-Specific Knowledge
 
-All agents are designed to intelligently detect and adapt to your project's tech stack:
+All agents are tailored to the Menthra tech stack:
 
-- **Auto-detection**: Scans package.json, requirements.txt, pom.xml, and other config files
-- **Framework detection**: Identifies React, Vue, Angular, Django, Flask, Spring, etc.
-- **Service detection**: Recognizes Redis, Elasticsearch, databases, APIs
-- **Common patterns**: FSM state machines, exponential backoff, authentication flows
+- **HeyGen**: `useLiveAvatar.ts`, `HeyGenTwinCreation.tsx`
+- **ElevenLabs**: `useElevenLabsTts.ts`
+- **Deepgram**: `DeepgramContextProvider.tsx`, `useDeepgramConnection.ts`
+- **Common patterns**: FSM state machines, exponential backoff, keepalive timeouts
 
 ### Azure DevOps Integration
 
@@ -110,10 +110,10 @@ Full API implementation with:
 cd Aria-Agent
 
 # Get all open tickets
-./run.sh "Show me all open tickets assigned to me"
+./run.sh "Show me all open tickets assigned to Mihir"
 
 # Analyze and fix an issue
-./run.sh "Analyze the authentication bug and give me a fix"
+./run.sh "Analyze the Deepgram WebSocket drop issue and give me a fix"
 
 # Get pattern insights
 ./run.sh "What recurring issues do we have this month?"
@@ -145,7 +145,7 @@ After each run, the following reports are created in `output/`:
 
 - ⏳ Test with actual Azure DevOps connection
 - ⏳ Verify ticket fetching and sorting
-- ⏳ Test code analysis with real project files
+- ⏳ Test code analysis with real Menthra files
 - ⏳ Test fix generation for actual bugs
 - ⏳ Verify pattern memory updates
 
@@ -216,7 +216,7 @@ The system is designed for easy extension:
 - ✅ Follows ARIA-MultiAgent-Setup.md specification
 - ✅ Uses exact agent prompts from spec
 - ✅ Implements all features described
-- ✅ Maintains project-specific knowledge through intelligent detection
+- ✅ Maintains Menthra-specific knowledge
 
 ## 📝 Next Steps
 

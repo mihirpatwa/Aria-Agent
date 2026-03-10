@@ -40,7 +40,7 @@ All specified requirements have been implemented:
 4. **`prompts/agent-fix.md`** (Enhanced)
    - Automatic retry for fix generation
    - Multiple attempt strategies
-   - Framework-agnostic standards compliance
+   - Menthra standards compliance
    - Detailed reporting with before/after code
 
 5. **`prompts/agent-verify.md`** (Enhanced)

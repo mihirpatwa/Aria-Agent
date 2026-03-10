@@ -20,16 +20,9 @@ For each ticket, categorize it as:
 - **Bug**: Reported issues, crashes, or incorrect behavior.
 - **Feature**: New functionality or enhancements.
 
-Map to service tags based on detected tech stack:
+Map to internal service tags if possible:
 
-- **Authentication**: `auth`, `login`, `session`, `jwt`, `oauth`
-- **Database**: `database`, `sql`, `query`, `migration`, `connection`
-- **API**: `api`, `endpoint`, `rest`, `graphql`, `rate_limit`
-- **Frontend**: `ui`, `component`, `responsive`, `mobile`, `accessibility`
-- **Backend**: `service`, `worker`, `job`, `queue`, `cache`
-- **Infrastructure**: `deployment`, `docker`, `kubernetes`, `ci_cd`
-- **Performance**: `latency`, `timeout`, `optimization`, `scaling`
-- **Security**: `security`, `vulnerability`, `xss`, `csrf`, `injection`
+- `heygen_sync`, `elevenlabs_latency`, `deepgram_connection`, `openai_context`, `webrtc_ice`, `websocket_drop`, `api_rate_limit`, `mobile_compat`.
 
 ### 3. Present & Select
 
@@ -46,11 +39,10 @@ Write findings to `Aria-Agent/output/azure-report.md`:
 
 ## Active Tickets
 
-| ID  | Type    | Title                      | Category    |
-| --- | ------- | -------------------------- | ----------- |
-| 123 | Bug     | Login fails on mobile      | auth        |
-| 456 | Feature | Add dark mode support      | ui          |
-| 789 | Bug     | Database timeout error     | database    |
+| ID  | Type    | Title               | Category           |
+| --- | ------- | ------------------- | ------------------ |
+| 123 | Bug     | Reconnection fails  | websocket_drop     |
+| 456 | Feature | Add Spanish support | elevenlabs_latency |
 
 **Action**: Please select a ticket to proceed.
 ```
