@@ -15,13 +15,17 @@ Read `Aria-Agent/output/azure-report.md` or get ticket details from the request 
 **Attempt 1 (wait 2s if fails, then try Attempt 2):**
 
 - Analyze ticket title and description
-- Map to a Menthra service:
-  - HeyGen (Avatar/Lip-sync)
-  - ElevenLabs (TTS/Voice)
-  - Deepgram (STT/Transcript)
-  - OpenAI (GPT/Context)
-  - WebRTC (Connection/ICE)
-  - WebSocket (Transport)
+- Scan project configuration files to detect tech stack:
+  - `package.json`, `requirements.txt`, `pom.xml`, `Gemfile`, `go.mod`, `Cargo.toml`
+  - `Dockerfile`, `docker-compose.yml`
+  - CI/CD configuration files
+- Map to detected service area:
+  - Frontend (React, Vue, Angular, etc.)
+  - Backend (Express, Django, Flask, Spring, etc.)
+  - Database (SQL, NoSQL, ORM)
+  - API (REST, GraphQL, RPC)
+  - Authentication/Authorization
+  - Infrastructure (Docker, Kubernetes)
 - **If can't identify**: Wait 2s, try broader search
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
@@ -39,8 +43,9 @@ Read `Aria-Agent/output/azure-report.md` or get ticket details from the request 
 
 **Attempt 1 (wait 2s if fails, then try Attempt 2):**
 
-- Use `Glob` tool with pattern: `src/**/*<service>*`
-- Example: `src/**/*heygen*` or `src/**/*avatar*`
+- Use `Glob` tool with pattern: `**/*<service>*` or `**/*<keyword>*`
+- Example: `**/*auth*` or `**/*login*` for authentication issues
+- Example: `**/*api*` or `**/*endpoint*` for API issues
 - **If no files found**: Wait 2s, try broader pattern
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
@@ -62,10 +67,13 @@ Read `Aria-Agent/output/azure-report.md` or get ticket details from the request 
 - Use `Read` tool to examine identified files
 - Look for:
   - Missing error handlers
-  - FSM race conditions
+  - Race conditions
   - Incorrect API usage
   - Memory leaks
   - Performance issues
+  - Security vulnerabilities
+  - Authentication/authorization flaws
+  - Database query issues
 - **If diagnosis unclear**: Wait 2s, re-examine with different focus
 
 **Attempt 2 (wait 4s if fails, then try Attempt 3):**
@@ -98,7 +106,7 @@ Save to `Aria-Agent/output/code-report.md`:
 
 ## Service Mapping
 
-**Primary Service**: [HeyGen/ElevenLabs/etc.]
+**Primary Service**: [Frontend/Backend/Database/API/Auth/etc.]
 **Related Services**: [any other services involved]
 
 ## Files Analyzed

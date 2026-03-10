@@ -1,6 +1,6 @@
 # Aria Autonomous Multi-Agent System
 
-An intelligent, fully autonomous engineering assistant for the Menthra AI platform. Aria orchestrates specialized roles for ticket triage, code analysis, fix generation, and verified delivery using a markdown-driven instruction set.
+An intelligent, fully autonomous engineering assistant. Aria orchestrates specialized roles for ticket triage, code analysis, fix generation, and verified delivery using a markdown-driven instruction set.
 
 ## 🎯 True Autonomous Workflow
 
@@ -99,10 +99,10 @@ Configure `Aria-Agent/.env` with:
 ### Azure DevOps Configuration:
 
 ```bash
-AZURE_ORG="aauti"
-AZURE_PROJECT="HealthCare"
-AZURE_PAT="your-pat-token"
-AZURE_ASSIGNEE="Mihir Patwa"
+AZURE_ORG="your-azure-org"              # Your Azure DevOps organization (e.g., "mycompany")
+AZURE_PROJECT="your-project-name"       # Your Azure DevOps project (e.g., "E-Commerce")
+AZURE_PAT="your-pat-token"              # Generate at: https://dev.azure.com/{your-org}/_usersSettings/tokens
+AZURE_ASSIGNEE="your-name"              # Your display name in Azure DevOps
 ```
 
 ### Delivery Automation:
@@ -119,11 +119,31 @@ ARIA_AZURE_COMMENT_ON_COMPLETE="true"   # Comment on Azure tickets
 ### QA Automation:
 
 ```bash
-QA_ENABLE_CHROME_MCP="true"             # Enable Chrome MCP testing
-QA_DEV_SERVER_URL="http://localhost:8081"  # Local dev server
-QA_TEST_EMAIL="erik@mailinator.com"     # Test account
-QA_TEST_PASSWORD="Robert@123"           # Test password
+QA_ENABLE_CHROME_MCP="true"                  # Enable Chrome MCP testing
+QA_DEV_SERVER_URL="http://localhost:3000"    # Local dev server URL
+QA_TEST_EMAIL="your-test-email@example.com"  # Test account email
+QA_TEST_PASSWORD="your-test-password"        # Test account password
 ```
+
+## 🚀 Quick Setup
+
+1. **Configure Environment:**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Azure DevOps configuration
+   ```
+
+2. **Find Your Azure Configuration:**
+   - Organization: `https://dev.azure.com/{your-org}/`
+   - Project: Navigate to your project in Azure DevOps
+   - PAT Token: Generate at `https://dev.azure.com/{your-org}/_usersSettings/tokens`
+   - Assignee: Your exact display name in Azure DevOps
+
+3. **Wake Aria:**
+   - In your AI IDE: "Hey Aria, wake up"
+   - Or: "Read `Aria-Agent/ARIA-AUTONOMOUS.md` and initialize"
+
+For detailed setup instructions, see [UNIVERSAL-SETUP.md](UNIVERSAL-SETUP.md).
 
 ## 🎯 Approval Workflow
 
@@ -167,4 +187,4 @@ Every autonomous run generates detailed reports:
 
 ---
 
-**Aria Autonomous System** · Menthra Platform · v4.0 (Fully Autonomous with Auto-Retry)
+**Aria Autonomous System** · Universal AI Agent · v4.0 (Fully Autonomous with Auto-Retry)

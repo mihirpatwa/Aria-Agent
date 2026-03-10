@@ -2,7 +2,7 @@
 
 ## Your Configuration
 
-**Assignee Name**: Mihir Patwa
+**Assignee Name**: your-name (must match Azure DevOps display name exactly)
 **Ticket Statuses**: To Do, In Progress, Reopen
 
 ## WIQL Query Used
@@ -14,7 +14,7 @@ SELECT [System.Id],[System.Title],[System.State],[System.Priority],
        [System.Description],[System.WorkItemType],[System.CreatedDate],
        [System.Tags],[System.ChangedDate]
 FROM WorkItems
-WHERE [System.AssignedTo] CONTAINS 'Mihir Patwa'
+WHERE [System.AssignedTo] CONTAINS '{assignee}'
   AND [System.State] IN ('To Do', 'In Progress', 'Reopen')
   AND [System.TeamProject] = '{project}'
 ORDER BY [Microsoft.VSTS.Common.Priority] ASC
@@ -44,14 +44,14 @@ cp .env.example .env
 Edit `.env` with your credentials:
 
 ```bash
-# Azure org from your board URL
-AZURE_ORG="aauti"
+# Azure org from your board URL (e.g., "mycompany" from https://dev.azure.com/mycompany/)
+AZURE_ORG="your-azure-org"
 
-# Azure project from your board URL
-AZURE_PROJECT="HealthCare"
+# Azure project from your board URL (e.g., "E-Commerce", "InternalTools")
+AZURE_PROJECT="your-project-name"
 
-# Assignee filter for ticket triage
-AZURE_ASSIGNEE="Mihir Patwa"
+# Assignee filter for ticket triage (must match Azure DevOps display name exactly)
+AZURE_ASSIGNEE="your-name"
 
 # Personal Access Token (PAT) from step 1
 AZURE_PAT="your-pat-token-here"
@@ -68,13 +68,13 @@ cd Aria-Agent
 
 This should now fetch your **actual** Azure DevOps tickets!
 Primary board URL:
-`https://dev.azure.com/aauti/HealthCare/_workitems/recentlyupdated/`
+`https://dev.azure.com/{your-org}/{your-project}/_workitems/recentlyupdated/`
 
 ## What Gets Fetched
 
 Aria will fetch tickets that match:
 
-- ✅ Assigned to: **Mihir Patwa**
+- ✅ Assigned to: **Your configured assignee name** (must match Azure DevOps display name exactly)
 - ✅ Status: **To Do** OR **In Progress** OR **Reopen**
 - ✅ Project: Your configured project
 
@@ -94,7 +94,7 @@ Aria will fetch tickets that match:
 
 ### No tickets returned?
 
-1. **Check assignee name** - Make sure tickets are assigned to "Mihir Patwa" (exact match)
+1. **Check assignee name** - Make sure tickets are assigned to your configured name (exact match with Azure DevOps display name)
 2. **Check ticket states** - Ensure tickets are in "To Do", "In Progress", or "Reopen" status
 3. **Check project** - Verify AZURE_PROJECT matches your actual project name
 4. **Check permissions** - Ensure PAT token has Work Items Read permission
