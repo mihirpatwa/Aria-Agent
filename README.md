@@ -2,9 +2,39 @@
 
 An intelligent, fully autonomous engineering assistant for the Menthra AI platform. Aria orchestrates specialized roles for ticket triage, code analysis, fix generation, and verified delivery using a markdown-driven instruction set.
 
+---
+
+## 🚀 Setup (3 Seconds)
+
+**Copy → Paste → Done!**
+
+1. Open `Aria-Agent/SETUP-PROMPT.md`
+2. Copy the text inside
+3. Paste into any AI IDE or CLI
+4. Aria Agent is ready!
+
+**Activate:** "Hey Aria, wake up"
+
+---
+
+## 🎯 AI-Agnostic Design
+
+**Aria Agent works with ANY AI IDE or CLI:**
+
+- ✅ **Cursor** (`.cursorrules`)
+- ✅ **Windsurf** (`.windsurfrules`)
+- ✅ **Claude Code** (`.claude/SYSTEM.md`)
+- ✅ **Gemini** (`.gemini/GEMINI.md`)
+- ✅ **GitHub Copilot** (`.copilot/instructions.md`)
+- ✅ **Auggie** (`.auggie/rules.md`)
+- ✅ **Tabnine** (`.tabnine/rules.md`)
+- ✅ **Any AI with file access**
+
+---
+
 ## 🎯 True Autonomous Workflow
 
-Aria operates FULLY AUTONOMOUSLY with automatic retry logic:
+Aria operates **FULLY AUTONOMOUSLY** with automatic retry logic:
 
 - ✅ **Fix automatically** - Generates patches without intervention
 - ✅ **Test automatically** - Runs tests with 3x retry and exponential backoff
@@ -69,6 +99,8 @@ This ensures the agent adopts the Aria persona and follows the autonomous multi-
 ```
 Aria-Agent/
 ├── ARIA-AUTONOMOUS.md      # Master Autonomous Instruction Set
+├── SETUP.md                # AI-Agnostic Setup Guide
+├── QUICK-SETUP.txt         # Quick Reference Guide
 ├── prompts/                # Role-specific instructions
 │   ├── main-agent.md       # Core Persona (with autonomous behavior)
 │   ├── agent-azure.md      # Triage Instructions
@@ -165,6 +197,44 @@ Every autonomous run generates detailed reports:
 - **Approval gate** prevents unwanted commits (unless explicitly enabled)
 - **Stage independence** - failure in one stage doesn't block others
 
+## 🌐 AI IDE Integration
+
+Aria Agent is designed to work with **any** AI IDE or CLI that can:
+
+1. Read files from the filesystem
+2. Follow markdown instructions
+3. Execute code changes
+4. Run terminal commands
+
+### Supported Platforms:
+
+- **IDEs**: Cursor, Windsurf, VS Code + Copilot, JetBrains + AI
+- **CLIs**: Claude Code, Gemini CLI, Auggie, custom AI CLIs
+- **Online**: Google AI Studio, OpenAI Codex, any AI with file access
+
+### Why This Works
+
+Aria separates concerns:
+
+- **Orchestration** → Markdown instructions (universal)
+- **Agent behavior** → Prompt files (AI-agnostic)
+- **Memory** → JSON files (cross-platform)
+- **Delivery approval** → Environment variables (standard)
+
+This makes it portable across CLIs, AI IDEs, and future assistant runtimes without rewriting the workflow logic.
+
+## 📚 Documentation
+
+- **Setup Guide**: `SETUP.md` - AI-agnostic setup for all platforms
+- **Autonomous Flow**: `ARIA-AUTONOMOUS.md` - Master instructions
+- **AI IDE Integration**: `AI-IDEs.md` - Platform-specific details
+- **Quick Reference**: `QUICK-SETUP.txt` - Quick setup guide
+- **Azure Setup**: `AZURE-SETUP.md` - Azure DevOps configuration
+
 ---
 
-**Aria Autonomous System** · Menthra Platform · v4.0 (Fully Autonomous with Auto-Retry)
+**Aria Autonomous System** · Menthra Platform · v5.0 (AI-Agnostic)
+
+> **Universal compatibility** - One agent, all AI platforms
+>
+> **Markdown-only** - No scripts, no installation, no dependencies
