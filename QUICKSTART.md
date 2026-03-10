@@ -67,7 +67,7 @@ Every stage has built-in resilience:
 4. You respond with "APPROVE" or "LGTM"
 5. Aria commits, pushes, and comments on Azure ticket
 
-**Full automation**: Set `ARIA_APPROVE_SENSITIVE_ACTIONS="commit,push,azure"` in `.env` to skip approval entirely.
+**Full automation**: Set `ARIA_APPROVE_SENSITIVE_ACTIONS="commit,push,azure"` in `Aria-Agent/.env` to skip approval entirely.
 
 ## 📂 Core Files
 
